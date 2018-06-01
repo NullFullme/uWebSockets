@@ -20,7 +20,7 @@ protected:
 
     static z_stream *allocateDefaultCompressor(z_stream *zStream);
 
-    z_stream inflationStream = {}, deflationStream = {};
+    z_stream inflationStream, deflationStream;
     char *deflate(char *data, size_t &length, z_stream *slidingDeflateWindow);
     char *inflate(char *data, size_t &length, size_t maxPayload);
     char *zlibBuffer;
